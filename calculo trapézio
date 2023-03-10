@@ -1,0 +1,16 @@
+public class Calculo extends Main {
+
+	public static void main(String[] args) {
+	
+		double B, b, h, area;
+		B = 6.0;
+		b = 8.0;
+		h = 5.0;
+		
+		area = (b + B) / 2.0 * h;
+		
+		System.out.println(area);
+
+	}
+
+}
