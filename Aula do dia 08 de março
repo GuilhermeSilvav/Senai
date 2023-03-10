@@ -16,11 +16,6 @@ public class Main {
 		soma = num1 + num2;
 		
 		System.out.println("A soma dos numeros é: " + soma);
-		
-		int multiplicacao = num1 * num2;
-    		System.out.println("A multiplicacao dos numeros é: " + multiplicacao);
-		multiplicacao = sc.nextInt();
-    
 		int divisao = num1 / num2;
 		System.out.println("A divisao dos numeros é: " + divisao);
 		divisao = sc.nextInt();
