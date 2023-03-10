@@ -1,0 +1,27 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class divisao extends Main {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		String z;
+		int x;
+		double y;
+		
+		z = sc.next();
+		x = sc.nextInt();
+		y = sc.nextDouble();
+		
+		System.out.print("Dados digitados: ");
+		System.out.println(z);		
+		System.out.println(x);	
+		System.out.println(y);	
+		sc.close();
+		
+
+	}
+
+}
