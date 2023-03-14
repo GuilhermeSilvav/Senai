@@ -1,0 +1,112 @@
+programa {
+	funcao inicio() 
+  {
+      cadeia nomealuno1, nomealuno2, nomealuno3, nomealuno4, nomealuno5, Aprovado, Reprovado
+      real nota1aluno1, nota2aluno1, nota3aluno1, nota4aluno1, nota5aluno1, media1, media2, media3, media4, media5
+      real nota1aluno2, nota2aluno2, nota3aluno2, nota4aluno2, nota5aluno2
+      real nota1aluno3, nota2aluno3, nota3aluno3, nota4aluno3, nota5aluno3
+      real nota1aluno4, nota2aluno4, nota3aluno4, nota4aluno4, nota5aluno4
+      real nota1aluno5, nota2aluno5, nota3aluno5, nota4aluno5, nota5aluno5
+      
+      escreva ("Informe o nome do aluno1:")
+      leia (nomealuno1)
+      escreva ("Informe a nota do aluno1:")
+      leia (nota1aluno1)
+      escreva ("Informe a nota2 do aluno1:")
+      leia (nota2aluno1)
+      escreva ("Informe a nota 3 do aluno1:")
+      leia (nota3aluno1)
+       escreva ("Informe a nota4 do aluno1:")
+      leia (nota4aluno1)
+      escreva ("Informe a nota 5 do aluno1:")
+      leia (nota5aluno1)
+
+      media1 = (nota1aluno1 + nota2aluno1 + nota3aluno1 + nota4aluno1 + nota5aluno1) / 5
+
+     escreva ("Informe o nome do aluno2:")
+      leia (nomealuno2)
+      escreva ("Informe a nota 1 do aluno2:")
+      leia (nota1aluno2)
+      escreva ("Informe a nota 2 do aluno1:")
+      leia (nota2aluno2)
+      escreva ("Informe a nota 3 do aluno2:")
+      leia (nota3aluno2)
+       escreva ("Informe a nota4 do aluno2:")
+      leia (nota4aluno2)
+      escreva ("Informe a nota 5 do aluno2:")
+      leia (nota5aluno2)
+
+      media2 = (nota1aluno2 + nota2aluno2 + nota3aluno2 + nota4aluno2 + nota5aluno2) / 5
+
+      escreva ("Informe o nome do aluno3:")
+      leia (nomealuno3)
+      escreva ("Informe a nota 1 do aluno3:")
+      leia (nota1aluno3)
+      escreva ("Informe a nota 2 do aluno3:")
+      leia (nota2aluno3)
+      escreva ("Informe a nota 3 do aluno3:")
+      leia (nota3aluno3)
+       escreva ("Informe a nota4 do aluno3:")
+      leia (nota4aluno3)
+      escreva ("Informe a nota 5 do aluno3:")
+      leia (nota5aluno3)
+
+      media3 = (nota1aluno3 + nota2aluno3 + nota3aluno3 + nota4aluno3 + nota5aluno3) / 5
+
+      escreva ("Informe o nome do aluno4:")
+      leia (nomealuno4)
+      escreva ("Informe a nota 1 do aluno4:")
+      leia (nota1aluno4)
+      escreva ("Informe a nota 2 do aluno4:")
+      leia (nota2aluno4)
+      escreva ("Informe a nota 3 do aluno4:")
+      leia (nota3aluno4)
+       escreva ("Informe a nota 4 do aluno4:")
+      leia (nota4aluno4)
+      escreva ("Informe a nota 5 do aluno4:")
+      leia (nota5aluno4)
+
+      media4 = (nota1aluno4 + nota2aluno4 + nota3aluno4 + nota4aluno4 + nota5aluno4) / 5
+
+      escreva ("Informe o nome do aluno5:")
+      leia (nomealuno5)
+      escreva ("Informe a nota 1 do aluno5:")
+      leia (nota1aluno5)
+      escreva ("Informe a nota 2 do aluno5:")
+      leia (nota2aluno5)
+      escreva ("Informe a nota 3 do aluno5:")
+      leia (nota3aluno5)
+       escreva ("Informe a nota4 do aluno5:")
+      leia (nota4aluno5)
+      escreva ("Informe a nota 5 do aluno5:")
+      leia (nota5aluno5)
+
+      media5 = (nota1aluno5 + nota2aluno5 + nota3aluno5 + nota4aluno5 + nota5aluno5) / 5
+
+     	se (media1 >= 7)
+      	escreva (nomealuno1 + "tirou media: " + media1 + "esta Aprovado\n")
+      	senao
+      	escreva(nomealuno1 + "tirou media: " + media1 + " esta Reprovado\n")
+
+      	 se (media2 >= 7)
+      	escreva(nomealuno2 + "tirou media: " + media2 + " esta Aprovado\n")
+      	senao
+      	escreva(nomealuno2 + " tirou media: " + media2 + " esta Reprovado\n")
+      	
+      	se (media3 >= 7)
+      	escreva (nomealuno3 + " tirou media: " + media3 + " esta Aprovado\n")
+      	senao
+      	escreva(nomealuno3 + " tirou media: " + media3 + " esta Reprovado\n")
+      	
+      	se (media4 >= 7)
+      	escreva (nomealuno4 + " tirou media: " + media4 + " esta Aprovado\n")
+      	senao
+      	escreva(nomealuno4 + " tirou media: " + media4 + " esta Reprovado\n")
+
+      se (media5 >= 7)
+      	escreva (nomealuno5 + "tirou media: " + media5 + " esta Aprovado\n")
+      	senao
+      	escreva(nomealuno5 + "tirou media: " + media5 + " esta Reprovado\n")
+      
+	}
+}
