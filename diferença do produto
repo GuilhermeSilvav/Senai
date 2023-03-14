@@ -1,0 +1,36 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		
+		int a, b, c, d;
+		int diferenca;
+		
+		System.out.println("escreva o valor de a: ");
+		a = sc.nextInt();
+		
+		System.out.println("escreva o valor de b: ");
+		b = sc.nextInt();
+		
+		System.out.println("escreva o valor de c: ");
+		c = sc.nextInt();
+	
+		System.out.println("escreva o valor de d: ");
+		d = sc.nextInt();
+		
+		System.out.println("O valor de a é:" + a);
+		System.out.println("O valor de b é:" + b);
+		System.out.println("O valor de c é:" + c);
+		System.out.println("O valor de d é:" + d);
+		
+		diferenca = (a * b - c * d);
+		
+		System.out.println("A diferenca do produto a e b para c e d é: " + diferenca);
+		diferenca = sc.nextInt();
+
+	}
+
+}
