@@ -9,15 +9,30 @@ public class OperadoresAritmeticos {
 
         int num1;
         int num2, soma;
-        
+        double num3;
+        double num4;
+
         System.out.println("Informe o valor para o num1: ");
         num1 = sc.nextInt();
 
         System.out.println("Informe o valor para o num2: ");
         num2 = sc.nextInt();
 
-        soma = num1 + num2;
-        System.out.println("A soma do " + num1 + " + " + num2 + " = " + soma);
+        System.out.println("Informe o valor para o num3: ");
+        num3 = sc.nextDouble();
+
+        System.out.println("Informe o valor para o num4: ");
+        num4 = sc.nextDouble();
+
+        soma = num1 - num2;
+        System.out.println("A soma do " + num1 + " + " + num2 + " = " + (num1 + num2));
+        System.out.println("A subtracao do " + num1 + " - " + num2 + " = " + (num1 - num2));
+        System.out.println("A multiplicacao do " + num1 + " * " + num2 + " = " + (num1 * num2));
+        System.out.println("A divisao do " + num1 + " / " + num2 + " = " + (num1 / num2));
+        System.out.println("A soma do " + num3 + " + " + num4 + " = " + (num3 + num4));
+        System.out.println("A subtracao do " + num3 + " - " + num4 + " = " + (num3 - num4));
+        System.out.println("A multiplicacao do " + num3 + " * " + num4 + " = " + (num3 * num4));
+        System.out.printf("A divisao do " + num3 + " / " + num4 + " = R$ %.2f", +(num3 / num4));
 
         sc.close();
     }
