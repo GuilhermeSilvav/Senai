@@ -1,0 +1,30 @@
+package aula_22_03;
+
+import java.util.Scanner;
+
+public class Aula_22_03 {
+
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+
+        char sexo = 'f';
+        String nome = "Marcela";
+        String cidade = "Santos";
+        int idade = 15;
+        float salario = 1450.00f;
+        
+
+        System.out.printf("A quantidade de produtos: %d "
+                + "\nValor de cada produto: R$ %.2f\n", quantidade, valor);
+        System.out.println("-------------------------------\n");
+        
+        System.out.println("Antonio\nVieira\ndos\nSantos");
+        System.out.println("------------------------------");
+        
+        System.out.printf("O nome: %s" + "\nSua idade: %d"
+                + "\nMora em:%s" + "\nSexo: %c"
+                + "\nSeu salario: %.2f", nome,idade,cidade,sexo,salario);
+
+    }
+
+}
