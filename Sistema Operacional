@@ -1,0 +1,24 @@
+package aula_12_04_2023;
+
+import javax.swing.JOptionPane;
+
+public class SwitchComString {
+
+    public static void main(String[] args) {
+
+        String sistOperacional, sO;
+        sistOperacional = JOptionPane.showInputDialog("Informe o sistema operacional: ");
+
+        JOptionPane.showMessageDialog(null, "O sistema operacional é: " + sistOperacional);
+        sO = switch (sistOperacional) {
+            case "Linux" ->
+                "So criado por Linus Torvalds";
+            case "Windows" ->
+                "sO criado por Bill Gates";
+            default ->
+                "Sistema operacional desconhecido";       
+        };
+        JOptionPane.showMessageDialog(null, sO);
+    }
+
+}
