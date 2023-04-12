@@ -1,0 +1,29 @@
+package aula_12_04_2023;
+
+import javax.swing.JOptionPane;
+
+public class Aula_12_04_2023 {
+
+    public static void main(String[] args) {
+        
+        String DiaDaSemana;
+        int dia = Integer.parseInt(JOptionPane.showInputDialog("Informe um valor entre 1 e 7"));
+        if (dia <1 || dia >7 ){
+            JOptionPane.showMessageDialog(null, "Voce informou um valor invalido");
+        } else {
+    
+                DiaDaSemana = switch (dia) {
+                case 1 -> "Domingo";
+                case 2 -> "Segunda-feira";
+                case 3 -> "Terça-feira";
+                case 4 -> "Quarta-feira";
+                case 5 -> "Quinta-feira";
+                case 6 -> "Sexta-feira";
+                case 7 -> "Sabado"; 
+                default -> "";
+            };
+        
+            JOptionPane.showMessageDialog(null,"Hoje é: " + DiaDaSemana);
+    }
+    } 
+}
