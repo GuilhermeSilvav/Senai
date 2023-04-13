@@ -1,0 +1,34 @@
+package aula_12_04_2023;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class Indice_de_massa_corporal {
+
+    public static void main(String[] args) {
+
+        float muitoabaixopeso = 0, abaixopeso = 0, pesonormal, acimapeso, obesidadegrauum,
+        obesidadegraudois, obesidadegrautres;
+        float peso = 0, altura = 0;
+        
+        peso = altura * altura / peso;
+
+        peso = Float.parseFloat(JOptionPane.showInputDialog(null, "Informe o peso"));
+        altura = Float.parseFloat(JOptionPane.showInputDialog(null, "Informe a altura"));
+
+        if ((peso >= 16.0) && (peso <= 16.9)){
+            peso = muitoabaixopeso;
+            
+            }else{
+            
+            if((peso >= 17.0) && (peso <= 18.4)){
+                peso = abaixopeso;
+            }else{
+                if((peso >= 17.0) && (peso <= 18.4)){
+                    
+                }
+            }
+            }
+        JOptionPane.showMessageDialog(null, peso);
+    }
+}
