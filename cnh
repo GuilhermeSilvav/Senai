@@ -1,0 +1,41 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia aprovado = "", reprovado, nomealuno 
+		real notapratica, notateorica = 0.0
+		inteiro idadealuno = 0
+
+		escreva("Qual seu nome? ")
+		leia(nomealuno)
+
+		escreva("Qual sua idade? ")
+		leia(idadealuno)
+
+		escreva("Qual a nota que o aluno tirou na prova teorica? ")
+		leia(notateorica)
+
+		escreva("Qual a nota que o aluno tirou na prova pratica? ")
+		leia(notapratica)
+
+		se (idadealuno <= 17){
+			escreva("O aluno não tem a idade necessária")
+			
+			}senao{
+				
+				se(notateorica < 7){
+				escreva("O aluno não passou na prova teórica")
+				
+			}senao
+				
+				se(notapratica < 7){
+				escreva("O aluno não passou na prova pratica")
+			}senao{
+				escreva("O aluno " + nomealuno + " esta aprovado" + "\nSua nota teorica foi: " +
+		    notateorica + "\nSua nota pratica foi: " + notapratica)
+			}
+		}
+
+	}
+}
