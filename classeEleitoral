@@ -1,0 +1,24 @@
+
+package aula_12_04_2023;
+
+import javax.swing.JOptionPane;
+
+public class classeEleitoral {
+    public static void main(String[] args) {
+    
+        
+        int Idade;
+        String Mensage = "";
+        
+        Idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade:"));
+        
+        if(Idade < 16) {
+            Mensage = "Não tem idade para votar;";
+        }else if(Idade >= 16 && Idade <=65) {
+            Mensage = "Eleitor Obrigatório";
+        }else if(Idade == 16 || Idade == 17 || Idade >65) {
+            Mensage = "Eleitor Facultativo";
+        }
+        JOptionPane.showMessageDialog(null, Mensage);
+    }
+}
