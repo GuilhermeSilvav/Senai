@@ -1,0 +1,16 @@
+
+package aula_12_04_2023;
+
+import javax.swing.JOptionPane;
+
+public class Cargo {
+    public static void main(String[] args) {
+        
+        int Cargo;
+        float salario;
+        
+        Object[] valores = {"Serviços Gerais", "Vigia", "Recepcionista", "Vendedor"};
+        Object selectedValores = JOptionPane.showInputDialog(null, "Escolha seu cargo", "cargo", JOptionPane.INFORMATION_MESSAGE, null, valores, valores[0]);
+    
+    }
+}
