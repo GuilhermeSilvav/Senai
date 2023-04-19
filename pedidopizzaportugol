@@ -1,0 +1,75 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia tamanho
+
+		inteiro sabor1 = 0, sabor2 = 0, sabor3 = 0, sabor4 = 0
+
+		real valortotal = 0.0
+
+		//-- Entradas
+
+		escreva("Informe o tamanho da pizza (P, M ou G):")
+		leia(tamanho)
+
+		escreva("Cardapio:\n")
+		escreva("Bacon:\n")
+		escreva("Doritos:\n")
+		escreva("Margherita:\n")
+		escreva("Sensacao:\n")
+		escreva("Camarão:\n")
+
+		escreva("Informe o sabor1: ")
+		leia(sabor1)
+		escreva("Informe o sabor2: ")
+		leia(sabor2)
+
+		se (tamanho == "M" ou tamanho == "G"){
+			escreva("Informe o sabor3: ")
+			leia(sabor3)
+		}
+
+		se (tamanho == "G"){
+			escreva("Informe o sabor4: ")
+		leia(sabor4)
+		}
+
+		//-- Inicio processamento
+		se (tamanho == "P"){
+			valortotal = 30.00
+		}
+		
+		se (tamanho == "M"){
+			valortotal = 50.00
+		}
+		
+		se (tamanho == "G"){
+			valortotal = 70.00
+		}
+
+
+		se (sabor1 == 4 ou sabor1 == 5){
+			valortotal += 5.0	
+		}
+
+		se (sabor2 == 4 ou sabor2 == 5){
+			valortotal += 5.0	
+
+		se (sabor3 == 4 ou sabor3 == 5){
+			valortotal += 5.0	
+
+		se (sabor4 == 4 ou sabor4 == 5){
+			valortotal += 5.0	
+
+		//--Fim processamento
+
+		//-- Saída de dados
+
+		escreva("valor total de pedido: " + valortotal)
+		
+
+		
+	}
+}
