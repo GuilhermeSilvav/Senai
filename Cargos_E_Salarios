@@ -1,0 +1,40 @@
+
+package aula_12_04_2023;
+
+import javax.swing.JOptionPane;
+
+public class Cargo {
+    public static void main(String[] args) {
+        
+        float salario;
+        
+        Object[] valores = {"Serviços Gerais", "Vigia", "Recepcionista", "Vendedor"};
+        Object selectedValores = JOptionPane.showInputDialog(null, "Escolha seu cargo", "cargo", JOptionPane.INFORMATION_MESSAGE, null, valores, valores[0]);
+        
+        salario = Float.parseFloat(JOptionPane.showInputDialog("Informe seu salario:"));
+        String cargo = (String) selectedValores;
+        
+        String novoSalario = switch (cargo) {
+                case "Serviços Gerais" ->
+                    "Seu cargo é Serviços Gerais" 
+                    + "\nAumento R$" + (salario * 50 / 100) 
+                    +"" 
+                    + "\nNovo Salario R$ " +(salario + ((salario * 50) / 100));
+                case "Vigia" ->
+                    "\nSeu cargo é Vigia"
+                + "\nAumento R$ " + (salario * 30 / 100)+""
+                + "\nNovo Salario R$" +(salario + ((salario *30) / 100));
+                case "Recepcionista" ->
+                    "\nSeu cargo é Recepcionista"
+                + "\nAumento R$ " + (salario * 25 / 100)+""
+                + "\nNovo Salario R$" +(salario + ((salario *25) / 100));
+                case "Vendedor" ->
+                    "\nSeu cargo é Vendedor"
+                + "\nAumento R$ " + (salario * 15 / 100)+""
+                + "\nNovo Salario R$" +(salario + ((salario *15) / 100));
+                    
+                default ->"";
+        }   ;    
+        JOptionPane.showMessageDialog(null, novoSalario);
+    }
+}
