@@ -1,0 +1,30 @@
+
+package aula_12_04_2023;
+
+import javax.swing.JOptionPane;
+
+public class Jornada_trabalho {
+    public static void main(String[] args) {
+        
+        int horas;
+        float valorhora;
+        String salario;
+        horas = Integer.parseInt(JOptionPane.showInputDialog("INforme as horas trabalhadas no mês"));
+        valorhora = Float.parseFloat(JOptionPane.showInputDialog("\nQual o Valor da sua hora de trabalho R$"));
+        
+        if(horas > 160) {
+            float horaExtra = horas - 160;
+            float valorextra = (horaExtra * ((valorhora * 50)/100));
+            float salariototal = valorextra + (horas*valorhora);
+            salario = "O funcionario trabalhou "
+                    +horas+"\ne fez " 
+                    + horaExtra + "horas extras" 
+                    + "\nseu valor de horas extras foi: R$"
+                    + valorextra+"\nseu salario este mês foi: R$" + salariototal;
+        }else{
+            salario = "\nO funcionario nao fez horas extras" 
+                    + "\nSeu salario dest mês é: R$ " + (horas*valorhora);
+        }
+        JOptionPane.showMessageDialog(null, salario);
+    }
+}
