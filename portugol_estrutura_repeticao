@@ -1,0 +1,19 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro i = 0
+		cadeia parar = "N"
+		
+		enquanto ( parar != "S"){
+			
+			//--escopo da estrutura de repetição
+			
+			escreva("Deseja interromper a estrutura (S/N)")
+			leia(parar)
+			i += 1
+		}
+		escreva ("Valor de i=" + i)
+	}
+}
