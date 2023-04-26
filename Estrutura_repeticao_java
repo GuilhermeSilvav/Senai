@@ -1,0 +1,30 @@
+package laco_repeticao;
+
+import javax.swing.JOptionPane;
+
+public class laco_repeticao26042023 {
+
+    public static void main(String[] args) {
+
+        int op = 1;
+        do{
+        String nome = JOptionPane.showInputDialog("Informe seu nome");
+        float nota = Float.parseFloat(JOptionPane.showInputDialog("Informe a nota 1: "));
+        float nota2 = Float.parseFloat(JOptionPane.showInputDialog("Informe a nota 2: "));
+        float nota3 = Float.parseFloat(JOptionPane.showInputDialog("Informe a nota 3: "));
+        
+        float media = (nota+nota2+nota3)/3;
+        
+        JOptionPane.showMessageDialog(null, "O nome do aluno é:" 
+                + nome 
+                + "\nA media do aluno: " + media);
+        
+        op = Integer.parseInt(JOptionPane.showInputDialog("Deseja continuar" 
+                + "\n1- Sim" 
+                + "\n0- Nao"));
+        }while(op !=0);
+        
+        System.exit(0);
+    
+    }
+}
