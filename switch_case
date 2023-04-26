@@ -1,0 +1,22 @@
+package curso_udemy;
+
+import javax.swing.JOptionPane;
+
+public class compirmento_de_onda {
+
+	public static void main(String[] args) {
+		
+		double cor;
+		String violeta = "";
+		double violeta +=  => 380.0 || violeta<= 450.0;
+		Object Double = cor = 0.0;
+		Double comprimentoonda = ((java.lang.Double) Double).parseDouble(JOptionPane.showInputDialog("Insira um comprimento de onda: "));
+		
+		switch (cor) {
+		case 1 = 
+				cor = "violeta";	
+		}
+		break};
+				}
+        }
+	}
