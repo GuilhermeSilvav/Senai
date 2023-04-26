@@ -1,0 +1,34 @@
+package laco_repeticao;
+
+import javax.swing.JOptionPane;
+
+public class Banco_26042023 {
+
+    public static void main(String[] args) {
+
+        int numeroConta = Integer.parseInt(JOptionPane.showInputDialog("N da conta: "));
+        String nomeCliente = JOptionPane.showInputDialog("Nome cliente:");
+        float depositoInicial = Float.parseFloat(JOptionPane.showInputDialog("Deposito Inicial"));
+        
+        int op = 1;
+        float valorDeposito, valorsaque, saldo;
+        do {
+            op = Integer.parseInt(JOptionPane.showInputDialog("Informe a operacao que deseja: " 
+                    + "\n2= Deposito "
+                    + "\n3= Saque "
+                    + "\n4= Saldo"));
+            
+            float valordigitado = switch (op){
+                case 2 ->
+                    valorDeposito = Float.parseFloat(JOptionPane.showInputDialog("Deposito R$"));
+                case 3 ->
+                    valorsaque = Float.parseFloat(JOptionPane.showInputDialog("Saque R$"));
+                case 4->
+                    saldo = Float.parseFloat(JOptionPane.showInputDialog("Saldo final R$ "));
+                case 5 -> op = 5;
+                default -> op = 5;
+            };
+            }while (op != 5);
+        System.exit(0);
+    }
+}
