@@ -1,0 +1,26 @@
+
+package laco_repeticao;
+
+import javax.swing.JOptionPane;
+
+public class for_laco_repeticao {
+    public static void main(String[] args) {
+        
+        int qtd = Integer.parseInt(JOptionPane.showInputDialog(""
+        + "Informe a quantidade de produto que deseja cadastrar: "));
+        float somavalores = 0.f;
+        
+        for (int i = 0; i < qtd; i++) {
+        String nomeproduto = JOptionPane.showInputDialog("Nome produto");
+        float valor = Float.parseFloat(JOptionPane.showInputDialog("Precos: R$"));
+        somavalores += valor;
+        
+            System.out.println("Produto: " + nomeproduto);
+            System.out.println("Valor: R$" + valor);
+            System.out.println("\n######################\n");
+        }
+        JOptionPane.showMessageDialog(null, "O valor total dos produtos foi de R$:"
+        + "R$" + somavalores);
+        
+    }
+}
