@@ -6,29 +6,58 @@ public class Banco_26042023 {
 
     public static void main(String[] args) {
 
-        int numeroConta = Integer.parseInt(JOptionPane.showInputDialog("N da conta: "));
-        String nomeCliente = JOptionPane.showInputDialog("Nome cliente:");
+         //--cadastro cliente
+        
+        int numeroConta = Integer.parseInt(JOptionPane.showInputDialog("N° da conta: "));
+        String nomeCliente = JOptionPane.showInputDialog("Nome cliente: ");
         float depositoInicial = Float.parseFloat(JOptionPane.showInputDialog("Deposito Inicial"));
+
+        //--Declaração das variaveis
         
         int op = 1;
-        float valorDeposito, valorsaque, saldo;
+        float valorDeposito, valorSaque, saldo;
+        
+        //--saldo recebe deposito inicial
+        
+        saldo = depositoInicial;
+        
+        //--inicio de "DO"
+        
         do {
-            op = Integer.parseInt(JOptionPane.showInputDialog("Informe a operacao que deseja: " 
-                    + "\n2= Deposito "
-                    + "\n3= Saque "
-                    + "\n4= Saldo"));
+            op = Integer.parseInt(JOptionPane.showInputDialog("Informe a operação que deseja: "
+                    + "\n2 - Deposito"
+                    + "\n3 - Saque"
+                    + "\n4 - Saldo"
+                    + "\n5 - Sair"));
             
-            float valordigitado = switch (op){
+            float valorDigitado = switch (op) {
                 case 2 ->
-                    valorDeposito = Float.parseFloat(JOptionPane.showInputDialog("Deposito R$"));
+                    saldo += valorDeposito = Float.parseFloat(JOptionPane.showInputDialog("Deposito R$: "));
                 case 3 ->
-                    valorsaque = Float.parseFloat(JOptionPane.showInputDialog("Saque R$"));
-                case 4->
-                    saldo = Float.parseFloat(JOptionPane.showInputDialog("Saldo final R$ "));
-                case 5 -> op = 5;
-                default -> op = 5;
+                    saldo -= valorSaque = Float.parseFloat(JOptionPane.showInputDialog("Saque R$: "));
+                case 4 ->
+                    saldo;
+                default ->
+                    op = 5;     
             };
-            }while (op != 5);
-        System.exit(0);
+            if (op != 5){
+                JOptionPane.showMessageDialog(null,"Seu saldo é R$: " + valorDigitado);
+            }else{
+                JOptionPane.showMessageDialog(null,"Obrigada por utilizar nosso Banco");
+            }
+                
+        }while (op != 5);
+        
+        JOptionPane.showMessageDialog(null,"----------------"
+                + "\nBanco ZÉ"
+                + "\n----------------"
+                + "\nConta:" + numeroConta
+                + "\nNome Cliente: " + nomeCliente    
+                + "\nSaldo Inicial: R$:" + depositoInicial
+                + "\nSaldo atual: R$:" + saldo
+                + "\n----------------");  
+                        
+         System.exit(0);
     }
-}
+    
+ }
