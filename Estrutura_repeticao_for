@@ -1,0 +1,16 @@
+
+package laco_repeticao;
+
+import javax.swing.JOptionPane;
+
+public class for_laco_repeticao {
+    public static void main(String[] args) {
+        
+        int qtd = Integer.parseInt(JOptionPane.showInputDialog(""
+        + "Informe a quantidade de produto que deseja cadastrar: "));
+        
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Boa noite");
+        }
+    }
+}
