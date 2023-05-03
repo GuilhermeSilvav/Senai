@@ -1,0 +1,31 @@
+package exercicio1;
+
+import javax.swing.JOptionPane;
+
+public class Exercicio1 {
+
+    public static void main(String[] args) {
+        int idade, contador = 0, op = 0, escolha, somaIdade = 0;
+
+        
+        do{
+            //---- Perguntar idade
+            idade = Integer.parseInt(JOptionPane.showInputDialog("Informe uma idade: "));
+            //----soma todas as idades digitadas
+            somaIdade +=idade;
+            
+            //----Contador de quantas idades foi digitada
+            contador++;            
+            
+        //---- o showConfirmDialog retorna ) para sim e 1 para não    
+        escolha = JOptionPane.showConfirmDialog (null, "Deseja continuar? ", "Escolha", JOptionPane.YES_NO_OPTION);
+        
+        //---- verifica se o valor continua igual a 0, se for NÃO sai do loop
+        //---- pode ser while(op != -1);
+        }while(escolha == 0);
+        
+        JOptionPane.showMessageDialog(null, "A soma das idades digitadas foi: "+ somaIdade+ "\nA quantidade de idades digitadas: "+contador+"\nA média das idades é: "+(somaIdade / contador));
+        
+    }
+
+}
