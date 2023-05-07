@@ -1,0 +1,89 @@
+programa
+{
+	
+	funcao inicio()
+	{
+	
+		cadeia origem1 = "", origem2 = "", origem3 = "", origem4 = "", destino1 = "",
+			destino2 = "", destino3 = "", destino4 = "", origem = "", destino = ""
+
+		real distancia1km, distancia2km = 0.0, distancia3km = 0.0, distancia4km = 0.0, distancia = 0.0,
+			valorviagem = 0.0, valor1viagem = 0.0, valor2viagem = 0.0, valor3viagem = 0.0, valor4viagem = 0.0,
+				menorvalorviagem = 0.0, maiordistanciaviagem = 0.0
+
+		escreva("Informe a origem da viagem 1:")
+		leia(origem1)
+		escreva("Informe o destino da viagem 1:")
+		leia(destino1)
+		escreva("Informe a distancia da viagem 1:")
+		leia(distancia1km)
+		escreva("Informe o valor da viagem 1:")
+		leia(valor1viagem)
+		
+		escreva("Informe a origem da viagem 2:")
+		leia(origem2)
+		escreva("Informe o destino da viagem 2:")
+		leia(destino2)
+		escreva("Informe a distancia da viagem 2:")
+		leia(distancia2km)
+		escreva("Informe o valor da viagem 2:")
+		leia(valor2viagem)
+		
+		escreva("Informe a origem da viagem 3:")
+		leia(origem3)
+		escreva("Informe o destino da viagem 3:")
+		leia(destino3)
+		escreva("Informe a distancia da viagem 3:")
+		leia(distancia3km)
+		escreva("Informe o valor da viagem 3:")
+		leia(valor3viagem)
+
+		se ((valor1viagem < valor2viagem) e (valor1viagem < valor3viagem)){
+			menorvalorviagem = valor1viagem
+			origem = origem1
+			destino = destino1
+			distancia = distancia1km
+		}
+			
+		se((valor2viagem < valor1viagem) e (valor2viagem < valor3viagem)){
+			menorvalorviagem = valor2viagem
+			origem = origem2
+			destino = destino2
+			distancia = distancia2km	
+		}
+		
+		se ((valor3viagem < valor1viagem) e (valor3viagem < valor2viagem)){
+			menorvalorviagem = valor3viagem
+			origem = origem3
+			destino = destino3
+			distancia = distancia3km
+		}
+
+		escreva("Viagem de menor valor:" 
+		+ "\nOrigem:" + origem + ", Destino: " + destino + ", Distancia: " + distancia + ", Valor: " + menorvalorviagem)
+
+		se ((distancia1km > distancia2km) e (distancia1km > distancia3km)){
+			maiordistanciaviagem = distancia1km 
+			valorviagem = valor1viagem
+			destino = destino1
+			origem = origem1
+		}
+		
+		se ((distancia2km > distancia1km) e (distancia2km > distancia3km)){
+			maiordistanciaviagem = distancia2km 
+			valorviagem = valor2viagem
+			destino = destino2
+			origem = origem2
+		}
+		
+		se ((distancia3km > distancia1km) e (distancia3km > distancia2km)){
+			maiordistanciaviagem = distancia3km 
+			valorviagem = valor3viagem
+			destino = destino3
+			origem = origem3
+		}
+
+		escreva("\n\nViagem de maior distancia:" 
+		+ "\nOrigem:" + origem + ", Destino: " + destino + ", Distancia: " + maiordistanciaviagem + ", Valor: " + valorviagem)
+	}							
+}
