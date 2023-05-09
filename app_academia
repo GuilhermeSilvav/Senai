@@ -1,0 +1,62 @@
+programa
+{
+	inclua biblioteca Matematica --> mat
+	
+	funcao inicio() {
+	
+		cadeia nomeAluno, exerciciosParaFazer = "", musculacao1 = "",  todosExercicios = ""
+		real altura, peso, imc = 0.0, musculacaoPreco = 80.0, musculacao, corridaPreco = 20.0,
+			corrida, bicicletaErgonomicaPreco = 30.0,
+			bicicletaErgonomica, caloriasaseremgastas = 0.0, valorPagar = 0.0, desconto = 0.0,
+			valorPlano = 0.0
+
+		escreva("Nome do Aluno: ")
+		leia(nomeAluno)
+		escreva("Peso do Aluno: ")
+		leia(peso)
+		escreva("Altura do Aluno: ")
+		leia(altura)
+		escreva("Quantidade de calorias a serem gastas na semana:")
+		leia(caloriasaseremgastas)
+
+		imc = mat.arredondar(peso / mat.potencia(altura,2.0),2)
+
+		se(caloriasaseremgastas <= 450){
+			musculacao1 = "Musculação:450 calorias"
+			valorPagar = 80.0
+			
+			}senao se(caloriasaseremgastas >= 451 e caloriasaseremgastas <= 1400){
+				todosExercicios = "Musculação:450 calorias\nCorrida:1400 calorias"
+				valorPagar = 100.0
+			
+				}senao se(caloriasaseremgastas >= 1401 e caloriasaseremgastas <= 3999){
+					todosExercicios = "Musculação:450 calorias\nCorrida:1400 calorias\nBicicleta Ergonomica"
+					valorPagar = 100.0
+			
+			}senao se(caloriasaseremgastas >= 4000){
+				todosExercicios = "Musculação:450 calorias\nCorrida:1400 calorias\nBicicleta Ergonomica"
+				valorPagar = 65.0
+			}
+
+		se(caloriasaseremgastas <= 450){
+			valorPlano = 80.0
+			
+			}senao se(caloriasaseremgastas >= 451 e caloriasaseremgastas <= 1400){
+				valorPlano = 100.0
+				
+				}senao se(caloriasaseremgastas >= 1401 e caloriasaseremgastas <= 3999){
+					valorPlano = 130.0
+			
+			}senao se(caloriasaseremgastas >= 4000){
+				valorPlano = 130.0
+				desconto = 65.0
+			}
+
+		escreva("Imc: ", imc)
+		escreva("\nLista de exercicios:\n", musculacao1, todosExercicios)
+		escreva("\nValor do Plano: ", valorPlano)
+		escreva("\nDesconto: ", desconto)
+		escreva("\nValor a pagar: ", valorPagar)
+				
+	}
+}
