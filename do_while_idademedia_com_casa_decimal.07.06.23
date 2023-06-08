@@ -1,0 +1,28 @@
+
+package javaapplication7;
+
+import javax.swing.JOptionPane;
+
+
+public class IdadeMedia {
+
+    
+    public static void main(String[] args) {
+        
+        int cont = 0;
+        float idade = 0.f, soma = 0, media;
+        
+        do{
+            idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade "));
+            if(idade != -1){
+                soma += idade;
+                cont++;
+            }
+        }while(idade != -1);
+        
+        media =soma / cont;
+        
+        System.out.printf( "%.1f", media);
+    }
+    
+}
