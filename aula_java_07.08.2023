@@ -1,0 +1,28 @@
+package javaapplication2;
+
+import javax.swing.JOptionPane;
+
+
+public class JavaApplication2 {
+
+
+    public static void main(String[] args) {
+
+       String correcao = "";
+       int nota = 0;
+        
+        for(int x = 0; x <= 9; x++ ){
+            
+            correcao = JOptionPane.showInputDialog("O aluno acertou a resposta?");
+            
+            if(correcao.equals("c")){
+                nota++;
+            }
+            else if(correcao == "e"){
+                nota += 0;
+            }
+        }
+            JOptionPane.showMessageDialog(null, "A nota do aluno foi "   + nota);
+        }
+        
+}
