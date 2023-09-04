@@ -1,0 +1,36 @@
+
+package javaapplication1;
+
+import javax.swing.JOptionPane;
+
+public class JavaApplication1 {
+    
+    public static void imprimir() {
+        System.out.println("Aprendendo linguegem Java");    
+    }
+    public static void ImprimirTexto(String texto) {
+        System.out.println(texto);    
+    }
+    public static void somar(int a, int b){
+        System.out.println("Somar: "+ (a+b));
+    }
+    public static void quadrado(int a){
+        System.out.println(Math.pow(a,2));
+    }
+    public static void maior(int a, int b, int c) {
+        System.out.println(Math.max(a, Math.max(b, c)));
+    }
+    public static void escolherSexo(char a){
+        a = Character.toUpperCase(a);
+        switch (a) {
+            case 'F' ->
+                System.out.println("Feminino");
+            case 'M' ->
+                System.out.println("Masculino");
+            default ->
+                System.out.println("Desconhecido");
+        }
+    }
+    
+}
+    
