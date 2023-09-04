@@ -1,0 +1,15 @@
+
+package javaapplication1;
+import javaapplication1.JavaApplication1;
+ 
+public class Metodo{
+    
+    public static void main(String[] args) {
+        JavaApplication1.imprimir();
+        JavaApplication1.ImprimirTexto("Ola mundo");
+        JavaApplication1.somar(8, 7);
+        JavaApplication1.escolherSexo('F');
+    }
+    
+    
+}
