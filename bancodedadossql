@@ -1,0 +1,348 @@
+create database Senai;
+use senai;
+CREATE TABLE Alunos(
+ID INT auto_increment primary key,
+Nome varchar(120) not null,
+DataNascimento DATE,
+Genero CHAR,
+Endereco VARCHAR(255),
+Contato VARCHAR(255)
+);
+
+CREATE TABLE Professores(
+ID INT auto_increment primary key,
+Nome varchar(120) not null,
+DataNascimento DATE,
+Genero CHAR,
+Endereco VARCHAR(255),
+Contato VARCHAR(255)
+);
+
+select * from Professores;
+
+CREATE TABLE Disciplinas(
+IDDisciplina int auto_increment primary key,
+NomeDisciplina varchar(255) not null
+);
+
+CREATE TABLE Turmas(
+IDTurma int auto_increment primary key,
+nomeTurma varchar(255) not null,
+AnoLetivo int,
+ProfessorResponsavel int,
+foreign key (ProfessorResponsavel) references Professores(ID)
+);
+
+CREATE TABLE Notas(
+IDNota int auto_increment primary key,
+IDAluno int,
+IDDisciplina int,
+Nota decimal(5, 2),
+foreign key (IDAluno) references Alunos (ID),
+foreign key (IDDisciplina) references Disciplinas (IDDisciplina)
+);
+
+CREATE TABLE Frequencia(
+IDFrequencia int auto_increment primary key,
+IDAluno int,
+IDDisciplina int,
+Dia date,
+Presenca boolean,
+foreign key (IDAluno) references Alunos (ID),
+foreign key (IDDisciplina) references Disciplinas (IDDisciplina)
+);
+
+CREATE TABLE EventosEscolares(
+IDEvento int auto_increment primary key,
+NomeEvento varchar(255) not null,
+DataEvento date,
+Descricao text,
+Endereco varchar(255)
+);
+
+CREATE TABLE Usuarios(
+IDUsuario int auto_increment primary key,
+NomeUsuario varchar(50) not null,
+Senha varchar(255)not null
+);
+
+INSERT INTO Alunos (Nome, DataNascimento, Genero, Endereco, Contato) VALUES
+    ('João da Silva', '1995-03-12', 'M', 'Rua das Flores, 123', '(11) 5555-5555'),
+    ('Maria Pereira', '1996-07-25', 'F', 'Avenida Principal, 456', '(22) 6666-6666'),
+    ('Carlos Santos', '1997-05-18', 'M', 'Travessa da Praça, 789', '(33) 7777-7777'),
+    ('Ana Rodrigues', '1994-12-03', 'F', 'Rua da Esquina, 101', '(44) 8888-8888'),
+    ('Pedro Oliveira', '1998-10-06', 'M', 'Avenida Central, 222', '(55) 9999-9999'),
+    ('Lúcia Gonçalves', '1993-02-15', 'F', 'Rua das Árvores, 777', '(66) 1111-1111'),
+    ('Fernando Ferreira', '1992-08-30', 'M', 'Avenida dos Anjos, 333', '(77) 2222-2222'),
+    ('Cristina Costa', '1996-11-01', 'F', 'Rua da Colina, 444', '(88) 3333-3333'),
+    ('Miguel Almeida', '1991-04-29', 'M', 'Avenida do Sol, 555', '(99) 4444-4444'),
+    ('Beatriz Carvalho', '1997-09-14', 'F', 'Rua do Lago, 666', '(10) 1212-1212'),
+    ('Ricardo Souza', '1990-06-22', 'M', 'Avenida da Montanha, 777', '(11) 1313-1313'),
+    ('Sofia Pereira', '1995-07-17', 'F', 'Rua do Bosque, 888', '(12) 1414-1414'),
+    ('Eduardo Lima', '1994-01-08', 'M', 'Avenida da Praia, 999', '(13) 1515-1515'),
+    ('Luísa Marques', '1993-03-20', 'F', 'Rua da Cidade, 1010', '(14) 1616-1616'),
+    ('Antônio Ribeiro', '1990-12-09', 'M', 'Avenida Central, 1111', '(15) 1717-1717'),
+    ('Clara Santos', '1998-02-02', 'F', 'Rua da Montanha, 2222', '(16) 1818-1818'),
+    ('Daniel Silva', '1992-05-03', 'M', 'Avenida dos Anjos, 3333', '(17) 1919-1919'),
+    ('Isabel Gonçalves', '1991-10-15', 'F', 'Rua das Flores, 4444', '(18) 2020-2020'),
+    ('Gustavo Ferreira', '1997-04-28', 'M', 'Avenida do Sol, 5555', '(19) 2121-2121'),
+    ('Laura Almeida', '1994-08-07', 'F', 'Rua da Praia, 6666', '(20) 2222-2222'),
+    ('Guilherme Costa', '1993-09-12', 'M', 'Avenida da Colina, 7777', '(21) 2323-2323'),
+    ('Carolina Carvalho', '1998-06-18', 'F', 'Rua da Cidade, 7777', '(22) 2424-2424'),
+    ('Rafael Souza', '1995-01-23', 'M', 'Avenida do Lago, 8888', '(23) 2525-2525'),
+    ('Larissa Lima', '1991-03-31', 'F', 'Rua do Bosque, 9999', '(24) 2626-2626'),
+    ('Hugo Marques', '1990-05-14', 'M', 'Avenida dos Anjos, 10101', '(25) 2727-2727'),
+    ('Júlia Ribeiro', '1996-07-07', 'F', 'Rua das Flores, 12121', '(26) 2828-2828'),
+    ('Henrique Silva', '1992-09-29', 'M', 'Avenida Principal, 14141', '(27) 2929-2929'),
+    ('Mariana Pereira', '1993-11-11', 'F', 'Rua da Praça, 15151', '(28) 3030-3030'),
+    ('Felipe Santos', '1991-12-12', 'M', 'Avenida Central, 16161', '(29) 3131-3131'),
+    ('Vitória Oliveira', '1990-08-25', 'F', 'Rua da Esquina, 17171', '(30) 3232-3232');
+
+select * from alunos;
+
+INSERT INTO Professores (Nome, DataNascimento, Genero, Endereco, Contato) VALUES
+    ('João da Silva', '1980-05-15', 'M', 'Rua das Flores, 123', '(11) 5555-5555'),
+    ('Maria Pereira', '1975-08-22', 'F', 'Avenida Principal, 456', '(22) 6666-6666'),
+    ('Carlos Santos', '1982-03-10', 'M', 'Travessa da Praça, 789', '(33) 7777-7777'),
+    ('Ana Rodrigues', '1978-12-30', 'F', 'Rua da Esquina, 101', '(44) 8888-8888'),
+    ('Pedro Oliveira', '1985-11-05', 'M', 'Avenida Central, 222', '(55) 9999-9999'),
+    ('Lúcia Gonçalves', '1976-04-20', 'F', 'Rua das Árvores, 777', '(66) 1111-1111'),
+    ('Fernando Ferreira', '1974-09-18', 'M', 'Avenida dos Anjos, 333', '(77) 2222-2222'),
+    ('Cristina Costa', '1983-02-01', 'F', 'Rua da Colina, 444', '(88) 3333-3333'),
+    ('Miguel Almeida', '1982-07-12', 'M', 'Avenida do Sol, 555', '(99) 4444-4444'),
+    ('Beatriz Carvalho', '1980-06-09', 'F', 'Rua do Lago, 666', '(10) 1212-1212'),
+    ('Ricardo Souza', '1976-10-03', 'M', 'Avenida da Montanha, 777', '(11) 1313-1313'),
+    ('Sofia Pereira', '1977-03-15', 'F', 'Rua do Bosque, 888', '(12) 1414-1414'),
+    ('Eduardo Lima', '1984-06-02', 'M', 'Avenida da Praia, 999', '(13) 1515-1515'),
+    ('Luísa Marques', '1982-08-10', 'F', 'Rua da Cidade, 1010', '(14) 1616-1616'),
+    ('Antônio Ribeiro', '1979-09-05', 'M', 'Avenida Central, 1111', '(15) 1717-1717'),
+    ('Clara Santos', '1983-01-25', 'F', 'Rua da Montanha, 2222', '(16) 1818-1818'),
+    ('Daniel Silva', '1977-04-13', 'M', 'Avenida dos Anjos, 3333', '(17) 1919-1919'),
+    ('Isabel Gonçalves', '1975-12-28', 'F', 'Rua das Flores, 4444', '(18) 2020-2020'),
+    ('Gustavo Ferreira', '1980-03-10', 'M', 'Avenida do Sol, 5555', '(19) 2121-2121'),
+    ('Laura Almeida', '1979-09-02', 'F', 'Rua da Praia, 6666', '(20) 2222-2222'),
+    ('Guilherme Costa', '1981-05-08', 'M', 'Avenida da Colina, 7777', '(21) 2323-2323'),
+    ('Carolina Carvalho', '1982-11-11', 'F', 'Rua da Cidade, 7777', '(22) 2424-2424'),
+    ('Rafael Souza', '1983-07-14', 'M', 'Avenida do Lago, 8888', '(23) 2525-2525'),
+    ('Larissa Lima', '1980-02-18', 'F', 'Rua do Bosque, 9999', '(24) 2626-2626'),
+    ('Hugo Marques', '1976-01-22', 'M', 'Avenida dos Anjos, 10101', '(25) 2727-2727'),
+    ('Júlia Ribeiro', '1981-03-01', 'F', 'Rua das Flores, 12121', '(26) 2828-2828'),
+    ('Henrique Silva', '1982-06-05', 'M', 'Avenida Principal, 14141', '(27) 2929-2929'),
+    ('Mariana Pereira', '1983-11-11', 'F', 'Rua da Praça, 15151', '(28) 3030-3030'),
+    ('Felipe Santos', '1979-12-25', 'M', 'Avenida Central, 16161', '(29) 3131-3131'),
+    ('Vitória Oliveira', '1981-08-30', 'F', 'Rua da Esquina, 17171', '(30) 3232-3232');
+
+select * from professores;
+
+INSERT INTO Disciplinas (NomeDisciplina) VALUES
+    ('Matemática'),
+    ('Português'),
+    ('História'),
+    ('Geografia'),
+    ('Ciências'),
+    ('Inglês'),
+    ('Educação Física'),
+    ('Artes'),
+    ('Biologia'),
+    ('Química'),
+    ('Física'),
+    ('Filosofia'),
+    ('Sociologia'),
+    ('Educação Ambiental'),
+    ('Literatura'),
+    ('Música'),
+    ('Informática'),
+    ('Espanhol'),
+    ('Francês'),
+    ('Alemão'),
+    ('História da Arte'),
+    ('Psicologia'),
+    ('Economia'),
+    ('Política'),
+    ('Programação'),
+    ('Gestão de Projetos'),
+    ('Marketing'),
+    ('Empreendedorismo'),
+    ('Direito'),
+    ('Administração');
+    
+select * from disciplinas;
+   
+INSERT INTO Notas (IDAluno, IDDisciplina, Nota) VALUES
+    (1, 1, 8.5),
+    (2, 1, 7.9),
+    (3, 1, 9.2),
+    (4, 2, 6.8),
+    (5, 2, 8.7),
+    (6, 2, 7.5),
+    (7, 3, 9.0),
+    (8, 3, 8.2),
+    (9, 3, 8.8),
+    (10, 4, 7.2),
+    (11, 4, 8.0),
+    (12, 4, 9.5),
+    (13, 5, 8.3),
+    (14, 5, 9.1),
+    (15, 5, 7.7),
+    (16, 6, 8.9),
+    (17, 6, 7.4),
+    (18, 6, 9.3),
+    (19, 7, 7.8),
+    (20, 7, 8.6),
+    (21, 7, 8.1),
+    (22, 8, 9.7),
+    (23, 8, 7.0),
+    (24, 8, 8.4),
+    (25, 9, 8.3),
+    (26, 9, 9.6),
+    (27, 9, 8.7),
+    (28, 10, 9.1),
+    (29, 10, 7.9),
+    (30, 10, 8.5);
+    
+select * from notas;
+
+INSERT INTO Turmas (nomeTurma, AnoLetivo, ProfessorResponsavel) VALUES
+    ('Turma A', 2023, 1),
+    ('Turma B', 2023, 2),
+    ('Turma C', 2023, 3),
+    ('Turma D', 2023, 4),
+    ('Turma E', 2023, 5),
+    ('Turma F', 2023, 6),
+    ('Turma G', 2023, 7),
+    ('Turma H', 2023, 8),
+    ('Turma I', 2023, 9),
+    ('Turma J', 2023, 10),
+    ('Turma K', 2023, 1),
+    ('Turma L', 2023, 2),
+    ('Turma M', 2023, 3),
+    ('Turma N', 2023, 4),
+    ('Turma O', 2023, 5),
+    ('Turma P', 2023, 6),
+    ('Turma Q', 2023, 7),
+    ('Turma R', 2023, 8),
+    ('Turma S', 2023, 9),
+    ('Turma T', 2023, 10),
+    ('Turma U', 2023, 1),
+    ('Turma V', 2023, 2),
+    ('Turma W', 2023, 3),
+    ('Turma X', 2023, 4),
+    ('Turma Y', 2023, 5),
+    ('Turma Z', 2023, 6),
+    ('Turma 1', 2023, 7),
+    ('Turma 2', 2023, 8),
+    ('Turma 3', 2023, 9),
+    ('Turma 4', 2023, 10);
+
+INSERT INTO Frequencia (IDAluno, IDDisciplina, Dia, Presenca) VALUES
+    (1, 1, '2023-10-01', 1),
+    (1, 2, '2023-10-01', 1),
+    (1, 3, '2023-10-01', 0),
+    (2, 1, '2023-10-01', 1),
+    (2, 2, '2023-10-01', 0),
+    (2, 3, '2023-10-01', 1),
+    (3, 1, '2023-10-01', 0),
+    (3, 2, '2023-10-01', 1),
+    (3, 3, '2023-10-01', 1),
+    (4, 1, '2023-10-01', 1),
+    (4, 2, '2023-10-01', 0),
+    (4, 3, '2023-10-01', 1),
+    (5, 1, '2023-10-01', 0),
+    (5, 2, '2023-10-01', 1),
+    (5, 3, '2023-10-01', 1),
+    (6, 1, '2023-10-01', 1),
+    (6, 2, '2023-10-01', 1),
+    (6, 3, '2023-10-01', 0),
+    (7, 1, '2023-10-01', 1),
+    (7, 2, '2023-10-01', 1),
+    (7, 3, '2023-10-01', 1),
+    (8, 1, '2023-10-01', 1),
+    (8, 2, '2023-10-01', 0),
+    (8, 3, '2023-10-01', 1),
+    (9, 1, '2023-10-01', 0),
+    (9, 2, '2023-10-01', 1),
+    (9, 3, '2023-10-01', 0),
+    (10, 1, '2023-10-01', 1),
+    (10, 2, '2023-10-01', 1),
+    (10, 3, '2023-10-01', 0);
+
+INSERT INTO EventosEscolares (NomeEvento, DataEvento, Descricao, Endereco) VALUES
+    ('Reunião de Pais e Mestres', '2023-11-15', 'Reunião mensal para discutir o progresso dos alunos.', 'Auditório da Escola Principal'),
+    ('Festa de Halloween', '2023-10-31', 'Uma festa temática de Halloween com jogos e prêmios.', 'Quadra Esportiva da Escola'),
+    ('Feira de Ciências', '2023-12-10', 'Apresentação de projetos científicos dos alunos.', 'Ginásio da Escola'),
+    ('Piquenique Anual', '2023-09-20', 'Um dia de diversão ao ar livre para alunos, pais e professores.', 'Parque Municipal'),
+    ('Apresentação de Teatro', '2023-11-28', 'Uma peça de teatro encenada pelos alunos.', 'Auditório da Escola Secundária'),
+    ('Competição de Matemática', '2023-10-05', 'Um evento para testar as habilidades matemáticas dos alunos.', 'Sala de Aula 302'),
+    ('Dia do Livro', '2023-04-23', 'Atividades relacionadas à leitura e livros.', 'Biblioteca da Escola'),
+    ('Dia das Profissões', '2023-02-18', 'Profissionais de diversas áreas falam sobre suas carreiras.', 'Auditório da Escola Técnica'),
+    ('Campeonato Esportivo', '2023-03-15', 'Competições esportivas entre equipes da escola.', 'Campo de Futebol da Escola'),
+    ('Concurso de Arte', '2023-06-10', 'Exposição de obras de arte criadas pelos alunos.', 'Galeria de Arte da Escola'),
+    ('Seminário de Ciências Sociais', '2023-08-25', 'Apresentações sobre tópicos relacionados às ciências sociais.', 'Sala de Conferências da Escola'),
+    ('Dia da Terra', '2023-04-22', 'Atividades relacionadas à conscientização ambiental.', 'Jardim da Escola'),
+    ('Visita ao Museu', '2023-07-12', 'Excursão a um museu local com os alunos.', 'Museu da Cidade'),
+    ('Noite de Cinema', '2023-01-30', 'Exibição de um filme seguida de discussão.', 'Auditório da Escola Secundária'),
+    ('Feira de Alimentos Saudáveis', '2023-03-05', 'Venda de alimentos saudáveis e conscientização sobre nutrição.', 'Pátio da Escola'),
+    ('Competição de Debate', '2023-05-20', 'Alunos competem em debates sobre tópicos atuais.', 'Sala de Debates da Escola'),
+    ('Dia da Cultura Internacional', '2023-09-30', 'Apresentações culturais e comida de diversas partes do mundo.', 'Área de Convivência da Escola'),
+    ('Concurso de Redação', '2023-04-05', 'Premiação de alunos com as melhores redações.', 'Biblioteca da Escola'),
+    ('Dia da Saúde', '2023-02-15', 'Palestras e exames de saúde para alunos e funcionários.', 'Enfermaria da Escola'),
+    ('Caminhada Ecológica', '2023-06-22', 'Uma caminhada para apreciar a natureza local.', 'Trilha na Floresta'),
+    ('Concerto de Música', '2023-12-01', 'Apresentação musical de alunos talentosos.', 'Auditório da Escola de Artes'),
+    ('Festival de Dança', '2023-11-10', 'Apresentações de dança por alunos da escola.', 'Ginásio da Escola'),
+    ('Dia do Esporte e Saúde', '2023-05-02', 'Atividades esportivas e informações de saúde para a comunidade escolar.', 'Campo de Futebol da Escola'),
+    ('Dia da Amizade', '2023-02-14', 'Celebração do valor da amizade entre os alunos.', 'Pátio da Escola Primária'),
+    ('Feira de Carreiras', '2023-07-30', 'Apresentações de diferentes opções de carreira para os alunos.', 'Salão de Eventos da Escola Técnica'),
+    ('Campeonato de Xadrez', '2023-09-12', 'Competição de xadrez entre os alunos.', 'Sala de Xadrez da Escola'),
+    ('Feira de Ciências da Computação', '2023-10-18', 'Exibição de projetos de ciência da computação.', 'Laboratório de Informática'),
+    ('Dia da Literatura', '2023-03-25', 'Celebração da literatura com leituras e atividades relacionadas a livros.', 'Biblioteca da Escola Primária'),
+    ('Dia da Tolerância', '2023-12-15', 'Promoção de valores de tolerância e respeito.', 'Auditório da Escola Secundária'),
+    ('Feira de Artesanato', '2023-06-05', 'Venda de artesanato criado por alunos.', 'Pátio da Escola'),
+    ('Apresentação de Coro', '2023-01-12', 'Apresentação do coro da escola.', 'Auditório da Escola de Música');
+
+INSERT INTO Usuarios (NomeUsuario, Senha) VALUES
+    ('Usuario1', 'senha1'),
+    ('Usuario2', 'senha2'),
+    ('Usuario3', 'senha3'),
+    ('Usuario4', 'senha4'),
+    ('Usuario5', 'senha5'),
+    ('Usuario6', 'senha6'),
+    ('Usuario7', 'senha7'),
+    ('Usuario8', 'senha8'),
+    ('Usuario9', 'senha9'),
+    ('Usuario10', 'senha10'),
+    ('Usuario11', 'senha11'),
+    ('Usuario12', 'senha12'),
+    ('Usuario13', 'senha13'),
+    ('Usuario14', 'senha14'),
+    ('Usuario15', 'senha15'),
+    ('Usuario16', 'senha16'),
+    ('Usuario17', 'senha17'),
+    ('Usuario18', 'senha18'),
+    ('Usuario19', 'senha19'),
+    ('Usuario20', 'senha20'),
+    ('Usuario21', 'senha21'),
+    ('Usuario22', 'senha22'),
+    ('Usuario23', 'senha23'),
+    ('Usuario24', 'senha24'),
+    ('Usuario25', 'senha25'),
+    ('Usuario26', 'senha26'),
+    ('Usuario27', 'senha27'),
+    ('Usuario28', 'senha28'),
+    ('Usuario29', 'senha29'),
+    ('Usuario30', 'senha30');
+
+select * from turmas;
+
+select * from frequencia;
+
+select * from eventosescolares;
+
+DELETE FROM eventosescolares WHERE NomeEvento BETWEEN 31 and 62;
+
+
+select professores.Nome AS NomeProfessorResponsavel
+FROM turmas
+INNER JOIN Professores on Turmas.ProfessorResponsavel = professores.ID
+where turmas.nomeTurma = 'Turma 1A';
+
+
