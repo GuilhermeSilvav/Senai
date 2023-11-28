@@ -1,0 +1,16 @@
+
+package javaapplication1;
+
+import javax.swing.JOptionPane;
+
+
+public class Ave extends Animal {
+    public void botarOvo(){
+        JOptionPane.showMessageDialog(null, "Bota ovos");
+    }
+    public void voar(){
+                JOptionPane.showMessageDialog(null, "Está voando");
+
+    }
+    
+}
