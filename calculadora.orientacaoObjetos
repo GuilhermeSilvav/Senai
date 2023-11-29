@@ -1,0 +1,39 @@
+
+package calculadora;
+
+import javax.swing.JOptionPane;
+
+
+public class Calculadora {
+    
+    //Atributes
+    public void somar(int a, int b) {
+        JOptionPane.showMessageDialog(null, "A soma de " + a+ " e " +  b + " e " + (a+b));
+    }
+    public void somar(int a, int b, int c) {
+        JOptionPane.showMessageDialog(null, "A soma de " + a+ " e " +  b + " e " + c + " e "+ (a+b+c));
+    }
+    public void somar(float a, float b) {
+        JOptionPane.showMessageDialog(null, "A soma de " + a+ " e " +  b + " e " + (a+b));
+    }
+    public void somar(float a, float b, float c) {
+        JOptionPane.showMessageDialog(null, "A soma de " + a+ " e " +  b + " e " + c + " e "+ (a+b+c));
+    }
+    
+}
+
+package calculadora;
+
+import javax.swing.JOptionPane;
+
+public class Conta extends Calculadora{
+    public static void main(String[] args){
+        
+        Calculadora total = new Calculadora();
+            total.somar(2, 5);
+            total.somar(5, 5, 5);
+            total.somar(4.8f, 6.7f);
+            total.somar(2.5f, 2.5f, 2.5f);
+        
+    }
+}
