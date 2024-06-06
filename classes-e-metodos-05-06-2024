@@ -1,0 +1,97 @@
+package projectHabeck;
+import java.util.Scanner;
+
+public class MyProject {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner sc = new Scanner (System.in);
+		
+		Pessoa pessoa1 = new Pessoa();
+		pessoa1.endereco =  new Endereco();
+		pessoa1.empresa = new Empresa();
+		
+		Pessoa pessoa2 = new Pessoa();
+		pessoa2.empresa = new Empresa();
+		pessoa2.endereco = new Endereco();
+		
+		Pessoa pessoa = new Pessoa();
+		pessoa.empresa = new Empresa();
+		pessoa.endereco = new Endereco();
+		
+		Empresa empresa = new Empresa();
+		empresa.endereco = new Endereco();
+		
+		Empresa empresa1 = new Empresa();
+		empresa1.endereco = new Endereco();
+		
+		
+		pessoa1.endereco.rua = "XV de Novembro";
+		pessoa1.empresa.nome = "Linx";
+		pessoa1.idade = 34;
+		pessoa1.endereco.cidade = "Blumenau";
+		
+		System.out.println("Qual o nome da pessoa? ");
+		pessoa1.nome = sc.nextLine();
+		
+;		System.out.println("Pessoa: " +pessoa1.nome+ 
+				"\nEndereço: "+ pessoa1.endereco.rua + 
+				"\nNome da empresa: "+ pessoa1.empresa.nome +
+				"\nIdade: "+ pessoa1.idade + 
+				" Anos\nCidade: "+ pessoa1.endereco.cidade);
+				
+	}
+
+}
+
+
+package projectHabeck;
+
+public class Pessoa {
+	
+	public String nome = "";
+	public int numFone = 0;
+	public int idade = 0;
+	
+	Endereco endereco;
+	Empresa empresa;
+}
+
+
+package projectHabeck;
+
+public class Empresa {
+	
+	public String nome = "";
+	public int cnpj = 0;
+	public int fone = 0;
+	
+	Endereco endereco;
+}
+
+
+package projectHabeck;
+
+public class Transportadora {
+	
+	public String nome = "";
+	public int cnpj = 0;
+	public String fone = "";
+	
+	Endereco endereco;
+	
+	
+}
+
+
+package projectHabeck;
+
+public class Endereco {
+	
+	public String rua = "";
+	public String bairro = "";
+	public String cidade = "";
+	public int cep = 0;
+	Empresa empresa;
+}
